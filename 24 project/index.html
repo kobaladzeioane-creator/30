@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>custom-select</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+    <div class="hero">
+        <div class="selector">
+            <div id="selectField">
+                <p id="selectText">Select Social Media</p>
+                <img src="image/arrow.png" id="arrowicon">
+            </div>
+            <ul id="list" class="hide">
+                <li class="options">
+                    <img src="image/facebook.png" alt="">
+                    <p>facebook</p>
+                </li>
+                <li class="options">
+                    <img src="image/whatsapp.png" alt="">
+                    <p>whatsapp</p>
+                </li>
+                <li class="options">
+                    <img src="image/youtube.png" alt="">
+                    <p>youtube</p>
+                </li>
+                <li class="options">
+                    <img src="image/pinterest.png" alt="">
+                    <p>pinterest</p>
+                </li>
+                <li class="options">
+                    <img src="image/twitter.png" alt="">
+                    <p>twitter</p>
+                </li>
+                <li class="options">
+                    <img src="image/instagram.png" alt="">
+                    <p>instagram</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var selectField = document.getElementById("selectField");
+        var selectText = document.getElementById("selectText");
+        var options = document.getElementsByClassName("options");
+        var list = document.getElementById("list");
+        var arrowicon = document.getElementById("arrowicon");
+        
+        for(option of options){
+            option.onclick = function(){
+                selectText.innerHTML = this.textContent
+                list.classList.toggle("hide");
+                arrowicon.classList.toggle("rotate");
+            }
+        }
+
+        selectField.onclick = function(){
+            list.classList.toggle("hide");
+            arrowicon.classList.toggle("rotate");
+            
+        }
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drag & Drop Example</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1b3c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 50px;
+  }
+
+  .container {
+    border: 2px dashed #aaa;
+    padding: 20px;
+    width: 200px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #2a254a;
+    border-radius: 8px;
+  }
+
+  .item {
+    background-color: #f25c6d;
+    padding: 10px;
+    color: white;
+    cursor: grab;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .item.dragging {
+    opacity: 0.5;
+  }
+</style>
+</head>
+<body>
+
+<div class="container" id="container1">
+  <div class="item" draggable="true">List Item 1</div>
+  <div class="item" draggable="true">List Item 2</div>
+</div>
+
+<div class="container" id="container2">
+  <div class="item" draggable="true">List Item 1</div>
+</div>
+
+<script>
+  const items = document.querySelectorAll('.item');
+  const containers = document.querySelectorAll('.container');
+
+  let draggedItem = null;
+
+  items.forEach(item => {
+    item.addEventListener('dragstart', () => {
+      draggedItem = item;
+      item.classList.add('dragging');
+    });
+
+    item.addEventListener('dragend', () => {
+      draggedItem = null;
+      item.classList.remove('dragging');
+    });
+  });
+
+  containers.forEach(container => {
+    container.addEventListener('dragover', (e) => {
+      e.preventDefault(); 
+    });
+
+    container.addEventListener('drop', () => {
+      if (draggedItem) {
+        container.appendChild(draggedItem);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

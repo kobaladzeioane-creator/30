@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eaf2fa;
+}
+
+.progress-circle {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: #eaf2fa;
+  box-shadow:
+    12px 12px 25px rgba(0,0,0,0.12),
+    -12px -12px 25px rgba(255,255,255,0.9);
+}
+
+svg {
+  width: 190px;
+  height: 190px;
+  transform: rotate(-90deg);
+}
+
+circle {
+  fill: none;
+  stroke-width: 14;
+  stroke-linecap: round;
+}
+
+circle.bg {
+  stroke: #dbe7f3;
+}
+
+circle.progress {
+  stroke: url(#gradient);
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  filter:
+    drop-shadow(0 6px 10px rgba(255,60,126,0.35))
+    drop-shadow(0 6px 10px rgba(106,92,255,0.35));
+  transition: stroke-dashoffset 1.8s cubic-bezier(.4,0,.2,1);
+}
+
+.percent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 26px;
+  font-weight: 700;
+  color: #5a5a5a;
+  letter-spacing: 0.5px;
+}
+
+/* subtle hover polish */
+.progress-circle:hover {
+  box-shadow:
+    16px 16px 30px rgba(0,0,0,0.14),
+    -16px -16px 30px rgba(255,255,255,1);
+}

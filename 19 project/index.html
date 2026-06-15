@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Password Strength</title>
+<style>
+  body {
+    background: #2f3b45;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    width: 400px;
+  }
+
+  input {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+  }
+
+  .strength {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .weak {
+    color: red;
+  }
+
+  .medium {
+    color: gold;
+  }
+
+  .strong {
+    color: limegreen;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <input type="password" id="password" placeholder="Enter password">
+  <div id="strength" class="strength"></div>
+</div>
+
+<script>
+  const password = document.getElementById("password");
+  const strength = document.getElementById("strength");
+
+  password.addEventListener("input", () => {
+    const length = password.value.length;
+
+    if (length === 0) {
+      strength.textContent = "";
+      strength.className = "strength";
+    } 
+    else if (length < 6) {
+      strength.textContent = "Password is weak";
+      strength.className = "strength weak";
+    } 
+    else if (length < 10) {
+      strength.textContent = "Password is medium";
+      strength.className = "strength medium";
+    } 
+    else {
+      strength.textContent = "Password is strong";
+      strength.className = "strength strong";
+    }
+  });
+</script>
+
+</body>
+</html>
+,

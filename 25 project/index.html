@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Progress Bar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="progress-circle">
+      <svg>
+        <defs>
+          <linearGradient id="gradient">
+            <stop offset="0%" stop-color="#ff3c7e"/>
+            <stop offset="100%" stop-color="#6a5cff"/>
+          </linearGradient>
+        </defs>
+
+        <circle class="bg" cx="80" cy="80" r="70"></circle>
+        <circle class="progress" cx="80" cy="80" r="70"></circle>
+      </svg>
+
+      <div class="percent">65%</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<link rel="stylesheet" href="style.css"

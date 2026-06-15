@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("bg.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding-left: 80px;
+}
+
+/* Dark overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* Content */
+.content {
+  position: relative;
+  color: #fff;
+  max-width: 550px;
+  z-index: 2;
+}
+
+.tag {
+  font-size: 14px;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+.content h1 {
+  font-size: 42px;
+  margin: 20px 0;
+  line-height: 1.2;
+}
+
+.content p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+/* Subscribe box */
+.subscribe-box {
+  display: flex;
+  background: #fff;
+  max-width: 420px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.subscribe-box input {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+
+.subscribe-box button {
+  width: 60px;
+  border: none;
+  background: #5fb34c;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.subscribe-box button:hover {
+  background: #4ca03c;
+}
+
+#message {
+  margin-top: 10px;
+  color: #5fff8a;
+  font-size: 14px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px;
+  }
+
+  .content h1 {
+    font-size: 30px;
+  }
+}
